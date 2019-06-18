@@ -1,0 +1,11 @@
+{
+    "orgId": "00D0k0000008u1SEAQ",
+    "accessToken": "604bb9bbc1fd524baba887b41ffa40048fa8e759491306b946a8e8bea610409c661e8344c722373a3579c43b68a5fb0c60a34216f3e4081ed742a16ea04799b1b7eee3c748f4bab2823748d998900dc48fb97373824da90bba7a8d1e59ecef26185141746dad6422bd534b78f231dbf5189b9fa47a34:5f375a4611d1f2ec4082e099991f9af4",
+    "refreshToken": "ea0f428c2ee6e697d70833c71dee6ece1aa1902aafcc51909bea47dc87004f8b00b267c6441d1167e5b2e93c28ade56ce4d804bef42b530250fd993371d27a633e78a30c3c4d76c09701e2c8593fc556b7a5be6614255edfa7abbcc666:2d48565f6d34563d70b237be03321809",
+    "instanceUrl": "https://agility-power-6303-dev-ed.cs57.my.salesforce.com/",
+    "loginUrl": "https://CS57.salesforce.com",
+    "username": "test-dnjlkx0mxadn@example.com",
+    "createdOrgInstance": "CS57",
+    "created": 1549876534259,
+    "devHubUsername": "vk@sales-force.com"
+}

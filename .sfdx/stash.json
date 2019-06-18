@@ -1,0 +1,9 @@
+{
+    "MDAPI_DEPLOY": {
+        "jobid": "0Af4M00001CpTjASAV"
+    },
+    "MDAPI_RETRIEVE": {
+        "jobid": "09SB0000004aPHBMA2",
+        "retrievetargetdir": "C:\\Users\\WELCOME\\AppData\\Local\\Temp\\sdx_sourceRetrieve_1560833818484"
+    }
+}

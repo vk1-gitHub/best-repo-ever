@@ -1,0 +1,11 @@
+{
+    "orgId": "00DN0000000RB2FMAW",
+    "accessToken": "c629a520dbe8f6c6bfc2e74947a3e778cbbddb0a9e2876e8d532304937bdbc346ea0eb2f16d55f9f3001b233a846450029897f6092f799a2c61863db7e7bde69d4cf19af5088c255ab115c47d4167139c859ae938e4134b33ba6c8a28c626954467495247e7ccd0a2a3292203054cabea35b1c6ecd3e:9a8f7ce7db091a6c46dac9b3662490e4",
+    "refreshToken": "979bf072822a63a440399e3fdadddc978a0aeba2732f52b56808479c6b6c26955a8aa20c736d1b53f938fe8c0b30511d39c14d056dab8733ab159360259e31a4c6e2c6ed2e4a08443b122f03949c407fee8241a6eb1953304b74fb1377:964f434ba1e3b224364b9ae2fedbb8bb",
+    "instanceUrl": "https://momentum-customer-543-dev-ed.cs6.my.salesforce.com/",
+    "loginUrl": "https://CS6.salesforce.com",
+    "username": "test-lsnsn71pbfes@example.com",
+    "createdOrgInstance": "CS6",
+    "created": 1548159496465,
+    "devHubUsername": "vk@cloudcertitude.com"
+}

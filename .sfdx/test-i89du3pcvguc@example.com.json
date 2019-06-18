@@ -1,0 +1,11 @@
+{
+    "orgId": "00DN0000000RBWZMA4",
+    "accessToken": "da56dd06214f14851e3e860c96dbd0495c93f64548f51c439e219c868152f8260914c068ad4da33ad1db80b87232475b023e6b394fc347ea7cded3346ebdb5ebc6da3b6d5ab4b52cd7e384abd0d92849e4aaefec78ea8ef2dff84eb4b7f37909124d836a76846db916bc912795a38a61441bed8ad90b:3ed988a109bf8c9f25901c8c533c6dfa",
+    "refreshToken": "27882576ea178ff423fd09bbd0b9749a8b7b54baf85cfee77be6d3f6d5fa571f58f095ee59f23b88c3f909db1d024fe58fcfea82db781f0de97a9472b181472f72c3e186211f2f05a3469fe0379599b4e631874a6664cfebfacc2c71e6:90a57f8247bd221a171dcc45a1228844",
+    "instanceUrl": "https://dream-app-8750-dev-ed.cs6.my.salesforce.com/",
+    "loginUrl": "https://CS6.salesforce.com",
+    "username": "test-i89du3pcvguc@example.com",
+    "createdOrgInstance": "CS6",
+    "created": 1548223078914,
+    "devHubUsername": "vk@cloudcertitude.com"
+}
