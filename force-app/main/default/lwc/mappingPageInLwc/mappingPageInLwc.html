@@ -1,0 +1,451 @@
+<template>
+        <lightning-card>
+            <div class="slds-grid slds-wrap slds-page-header slds-p-around_small slds-theme_shade">
+                <div class="slds-col slds-size_1-of-1 slds-large-size_2-of-12">
+                    <span> 
+                        <div class="slds-page-header__col-title">
+                            <div class="slds-media">
+                                <div class="slds-media__figure">
+                                    <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                        <lightning-icon icon-name="custom:custom78" size="large" alternative-text="custom custom78" ></lightning-icon>
+                                    </span>
+                                </div>
+                                <div class="slds-media__body">
+                                    <div class="slds-page-header__name">
+                                        <div class="slds-page-header__name-title">
+                                        <h1>
+                                            <span class="slds-page-header__name-meta">IMPORT PROCESS</span>
+                                        </h1>
+                                        </div>
+                                    </div>
+                                    <p class="slds-page-header__title slds-truncate">Source Mapping</p>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_1-of-1 slds-large-size_5-of-12">
+                    <b class="slds-p-left_large">Powered By</b><br/>
+                    <img class="slds-p-left_large" src={enrollmentRxLogo}>
+                </div>
+        
+                <div class="slds-col slds-size_2-of-12">
+                    <span>
+                    <lightning-combobox
+                        class="DataSource"
+                        name="datasource"
+                        value={selectedDataSorce}
+                        options={dataSourceOptions}
+                        onchange={getSelectedDataSorce}>
+                    </lightning-combobox>
+                </span>
+                </div>
+                <div class="slds-col slds-size_1-of-12">
+                    <span class="slds-p-left_small">
+                            <lightning-button variant="brand" label="View Details" data-item="view Detail" data-title="Brand" data-index="0" data-parentindex="1" onclick={handleViewDetail}></lightning-button>
+                    </span>
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-p-left_xx-small">
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:collapse_all" size="small" alternative-text="collapse_all" ></lightning-icon></span>
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:expand_all" size="small" alternative-text="expand_all" ></lightning-icon></span>
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:add" size="small" alternative-text="add" ></lightning-icon></span>
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:copy" size="small" alternative-text="copy" ></lightning-icon></span>
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:task" size="small" alternative-text="task" ></lightning-icon></span>
+                    <span><lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:home" size="small" alternative-text="home" ></lightning-icon></span>
+                </div>
+            </div>
+        </lightning-card>
+    
+        <div class="slds-m-around_medium">
+            <lightning-card class="slds-p-top_medium">
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-col slds-size_12-of-12">
+                        <span>
+                            <lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:text_template" alternative-text="text_template"></lightning-icon>
+                            <h1 class="slds-float_left slds-page-header__title slds-p-left_small">Target Objects</h1>
+                        </span>
+                        <span style="float:left;">
+                            <lightning-combobox
+                                class="slds-p-left_medium"
+                                name="Objects"
+                                value={objValue}
+                                placeholder="Contact"
+                                options={options2}>
+                            </lightning-combobox>
+                        </span>
+                    </div>
+                </div>
+                <div class="slds-p-around_small">
+                    <div class="slds-grid slds-wrap slds-box slds-theme_shade">
+                        <div class="slds-col slds-size_9-of-12" onclick={handleParentHideShow}>
+                            <template if:true={showParentDetail}>
+                                    <lightning-icon class="slds-float_left slds-p-left_xxx-small" icon-name="utility:ban" size="small" alternative-text="utility ban"></lightning-icon>
+                            </template>
+                            <template if:false={showParentDetail}>
+                                    <lightning-icon class="slds-float_left slds-p-left_xxx-small" icon-name="utility:new" size="small" alternative-text="utility new"></lightning-icon>
+                            </template>
+                            <span class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"><h1>{objValue}</h1></span>
+                        </div> 
+                        <div class="slds-col slds-size_3-of-12">
+                            <span class="slds-p-right_medium">
+                                <lightning-icon class="slds-float_right slds-p-left_small slds-p-top_xx-small" icon-name="utility:clear" size="small" alternative-text="utility close" ></lightning-icon>
+                                <lightning-button class="slds-float_right" variant="brand" data-objname={objValue} label="Duplicate Matching Rule" icon-name="action:edit_groups" onclick={handleDuplicateMatchingRule}></lightning-button> 
+                            </span>
+                        </div>           
+                    </div>
+                </div>
+                <template if:true={showParentDetail}>
+                    <template if:true={wrapComboWithDeleteList}>
+                        <div class="slds-grid slds-wrap slds-box">
+                            <div class="slds-col slds-size_2-of-12">
+                                <span><h1><b>BIG TABLE FIELDS</b></h1></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                    <span><h1><b>FIELDS IN CONTACT</b></h1></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                    <span>
+                                        <lightning-helptext class="slds-p-left_large" content="Override existing field value if this checkbox is checked, the target field will always be updated with the big table value.
+                                                                                                If unchecked the target field will only update it blank.">
+                                        </lightning-helptext>
+                                        <lightning-helptext class="slds-p-left_x-large" content="Transformations"></lightning-helptext>
+                                        <lightning-helptext class="slds-p-left_large" content="Remove Fields"></lightning-helptext>
+                                    </span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                    <span><h1><b>BIG TABLE FIELDS</b></h1></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                    <span><h1><b>FIELDS IN CONTACT</b></h1></span>
+                            </div>
+                            <div class="slds-col slds-size_2-of-12">
+                                <span>
+                                    <lightning-helptext class="slds-p-left_large" content="Override existing field value if this checkbox is checked, the target field will always be updated with the big table value.
+                                    If unchecked the target field will only update it blank."></lightning-helptext>
+                                    <lightning-helptext class="slds-p-left_x-large" content="Transformations"></lightning-helptext>
+                                    <lightning-helptext class="slds-p-left_large" content="Remove Fields"></lightning-helptext>
+                                </span>
+                            </div>
+                        </div>
+                        <div  class="slds-grid slds-wrap slds-box">
+                        <template for:each={wrapComboWithDeleteList} for:item="item">        
+                                <div key={item.Id} class="slds-col slds-size_2-of-12 slds-p-right_large">
+                                    <div class="slds-is-relative">
+                                        <template if:true={item.isLast}>
+                                            <lightning-input type="search" data-index={item.index} value="" placeholder="Select Big Table Field" onclick={handleSearch} onchange={handleSearchChange}></lightning-input>
+                                            <template if:true={showBTFields}>
+                                                <div class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-dropdown_length-with-icon-10 slds-dropdown_left slds-is-absolute">
+                                                    <template for:each={bigTableSortedFields} for:item="item">
+                                                            <li key={item.Id} data-index={item.index} onclick={getSelectedBTField} class="slds-p-left_small slds-p-right_small">{item.label}</li>
+                                                    </template>
+                                                </div>
+                                            </template>
+                                        </template>
+                                        <template if:false={item.isLast}>
+                                                <span><h2>{item.bTFieldName}</h2></span>
+                                        </template>
+                                    </div>
+                                </div>
+                                <div key={item.Id} class="slds-col slds-size_2-of-12">
+                                    <span>
+                                        <lightning-combobox
+                                            name={item.index}
+                                            value={item.selectedVal}
+                                            placeholder="None"
+                                            options={item.optionList}
+                                            onchange={getSelectedField}>
+                                        </lightning-combobox>
+                                    </span>
+                                </div>
+                                <div key={item.Id} class="slds-col slds-size_2-of-12">                                   
+                                       <span>
+                                            <lightning-input type="checkbox" class="slds-float_left slds-p-left_large" onchange={getCheckboxValue} select="true" value={checkBoxVal}></lightning-input>
+                                            <lightning-icon class="slds-float_left slds-p-left_medium" icon-name="utility:loop" size="small" alternative-text="utility loop"></lightning-icon>
+                                            <lightning-icon class="slds-float_left slds-p-left_medium" icon-name="utility:delete" size="small" data-index={item.index} alternative-text="utility delete" onclick={handleDelete}></lightning-icon>
+                                        </span>
+                                </div>
+                        </template>
+                    </div>
+                    </template>
+                </template>
+               
+                <div class="slds-grid slds-wrap">
+                    <div class="slds-size_12-of-12">
+                        <template if:true={relatedObjectsList}>
+                            <template for:each={relatedObjectsList} for:item="item">
+                                <div key={item.Id} class="slds-grid slds-wrap slds-theme_alt-inverse slds-m-around_small">
+                                    <div class="slds-col slds-size_12-of-12">
+                                        <template if:true={item.showChild}>
+                                                <lightning-icon icon-name="utility:ban" class="slds-float_left slds-p-left_small slds-p-top_x-small slds-p-bottom_x-small" size="small" data-index={item.index} onclick={handleChildHideShow} alternative-text="utility ban" ></lightning-icon>
+                                        </template>
+                                        <template if:false={item.showChild}>
+                                                <lightning-icon icon-name="utility:new" class="slds-float_left slds-p-left_small slds-p-top_x-small slds-p-bottom_x-small" size="small" data-index={item.index} onclick={handleChildHideShow} alternative-text="utility ban" ></lightning-icon>
+                                        </template>
+                                        <span class="slds-float_left slds-p-left_x-small slds-p-top_x-small slds-p-bottom_x-small" onclick={handleChildHideShow}><b class="slds-text-heading_medium" data-index={item.index}>{item.childObjName} Related Records</b></span>
+                                        <span style="color:black;">
+                                            <lightning-combobox
+                                                class="slds-float_left slds-p-left_x-small slds-p-top_x-small slds-p-bottom_x-small"
+                                                data-index={item.index}
+                                                value={item.selectedVal}
+                                                placeholder="--Select--"
+                                                options={item.childObjList}
+                                                onchange={handleChildObjSelect}>
+                                            </lightning-combobox>
+                                        </span>
+                                        <div class="slds-p-top_x-small">
+                                            <lightning-button variant="brand" label="Add Object" data-index={item.index} onclick={addRelatedObjects} class="slds-m-left_x-small"></lightning-button>
+                                        </div>
+                                    </div>
+                                </div>   
+    
+    
+                                <div key={item.Id} class="slds-grid slds-wrap slds-m-around_small">
+                                    <template if:true={item.showChild}>
+                                        <div class="slds-col slds-size_9-of-12" data-index={item.index} onclick={handleChildsHideShow}>
+                                            <template if:true={item.showChildDetail}> 
+                                                    <lightning-icon icon-name="utility:ban" class="slds-float_left slds-p-left_xxx-small" size="small" data-index={item.index} alternative-text="utility ban"></lightning-icon>
+                                            </template>
+                                            <template if:false={item.showChildDetail}> 
+                                                    <lightning-icon icon-name="utility:new" class="slds-float_left slds-p-left_xxx-small" size="small" data-index={item.index} alternative-text="utility new"></lightning-icon>
+                                            </template>
+                                            <span class="slds-float_left slds-p-left_x-small slds-p-top_xx-small"><h1 data-index={item.index}>{item.selectedObjLabel}</h1></span>
+                                            <!--<span class="slds-float_left slds-p-left_x-small slds-p-top_xx-small">
+                                                <lightning-combobox
+                                                    data-index={item.index}
+                                                    value={item.selectedParentVal}
+                                                    options={item.parentOption}>
+                                                </lightning-combobox>
+                                            </span>-->
+                                        </div>
+                                        <div class="slds-col slds-size_3-of-12">
+                                            <span class="slds-p-right_medium">
+                                                <lightning-icon class="slds-float_right slds-p-left_small" icon-name="utility:clear" size="small" alternative-text="utility clear" ></lightning-icon>
+                                                <lightning-button class="slds-float_right" variant="brand" data-index={item.index} data-objname={item.selectedObjLabel} label="Duplicate Matching Rule" icon-name="action:edit_groups" onclick={handleDuplicateMatchingRule}></lightning-button> 
+                                            </span>
+                                        </div>
+                                    </template>
+                                </div>
+                                <!--Child Objects Hide Show-->
+                                
+                                <div key={item.Id} class="slds-grid slds-wrap slds-m-around_small">
+                                    <template if:true={item.showChild}>
+                                        <template if:true={item.showChildDetail}>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                <span><h1><b>BIG TABLE FIELDS</b></h1></span>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                    <span><h1><b>FIELDS IN {item.selectedObjLabel}</b></h1></span>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                    <span>
+                                                        <lightning-helptext class="slds-p-left_large" content="Override existing field value if this checkbox is checked, the target field will always be updated with the big table value.
+                                                                                                                If unchecked the target field will only update it blank.">
+                                                        </lightning-helptext>
+                                                        <lightning-helptext class="slds-p-left_x-large" content="Transformations"></lightning-helptext>
+                                                        <lightning-helptext class="slds-p-left_x-large" content="Remove Fields"></lightning-helptext>
+                                                    </span>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                    <span><h1><b>BIG TABLE FIELDS</b></h1></span>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                    <span><h1><b>FIELDS IN {item.selectedObjLabel}</b></h1></span>
+                                            </div>
+                                            <div class="slds-col slds-size_2-of-12">
+                                                <span>
+                                                    <lightning-helptext class="slds-p-left_large" content="Override existing field value if this checkbox is checked, the target field will always be updated with the big table value.
+                                                    If unchecked the target field will only update it blank."></lightning-helptext>
+                                                    <lightning-helptext class="slds-p-left_x-large" content="Transformations"></lightning-helptext>
+                                                    <lightning-helptext class="slds-p-left_x-large" content="Remove Fields"></lightning-helptext>
+                                                </span>
+                                            </div>
+                                            <!--Child Objects Combobox with BigTable Fields Start Here-->
+                                            <div class="slds-size_12-of-12 slds-grid slds-wrap">
+                                                <template if:true={item.wrapSearchWithDeleteList}>
+                                                    <template for:each={item.wrapSearchWithDeleteList} for:item="wrapObj">      
+                                                        <div key={wrapObj.Id} class="slds-col slds-size_2-of-12 slds-p-right_large">
+                                                            <div key={wrapObj.Id} class="slds-is-relative">
+                                                                <template if:true={wrapObj.isLast}>
+                                                                    <lightning-input type="search" data-parentindex={item.index} data-index={wrapObj.index} value="" placeholder="Select Big Table Field" onclick={handleSearchInChild} onchange={handleSearchChange}></lightning-input>
+                                                                    <template if:true={wrapObj.showBtList}>
+                                                                        <div class="slds-listbox slds-listbox_vertical slds-dropdown slds-dropdown_fluid slds-dropdown_length-with-icon-10 slds-dropdown_left slds-is-absolute">
+                                                                            <template for:each={bigTableSortedFields} for:item="bigTableObj">
+                                                                                    <li key={bigTableObj.Id} data-index={bigTableObj.index} onclick={getSelectedBTFieldInChilds} class="slds-p-left_small slds-p-right_small">{bigTableObj.label}</li>
+                                                                            </template>
+                                                                        </div>
+                                                                    </template>
+                                                                </template>
+                                                                <template if:false={wrapObj.isLast}>
+                                                                        <span><h2>{wrapObj.btField}</h2></span>
+                                                                </template>
+                                                            </div>
+                                                        </div>
+                                                        <div key={wrapObj.Id} class="slds-col slds-size_2-of-12">
+                                                            <span>
+                                                                <lightning-combobox
+                                                                    data-parentindex={item.index}
+                                                                    data-index={wrapObj.index}
+                                                                    value={wrapObj.selectedVal}
+                                                                    placeholder="None"
+                                                                    options={wrapObj.optionList}
+                                                                    onchange={getSelectedFieldInChild}>
+                                                                </lightning-combobox>
+                                                            </span>
+                                                        </div>
+                                                        <div key={wrapObj.Id} class="slds-col slds-size_2-of-12">
+                                                            <span>
+                                                                <lightning-input type="checkbox" class="slds-float_left slds-p-left_large" onchange={getCheckboxValue} select="true" value={checkBoxVal}></lightning-input>
+                                                                <lightning-icon class="slds-float_left slds-p-left_large" icon-name="utility:loop" size="small" alternative-text="utility loop"></lightning-icon>
+                                                                <lightning-icon class="slds-float_left slds-p-left_large" icon-name="utility:delete" size="small" data-parentindex={item.index} data-index={wrapObj.index} alternative-text="utility delete" onclick={handleDeleteInChild}></lightning-icon>
+                                                            </span>
+                                                        </div>
+                                                    </template>
+                                                </template>	
+                                            </div>
+                                            <!--Child Objects Combobox with BigTable Fields End Here-->
+                                        </template>
+                                    </template>
+                                </div>
+                                <!--Child Objects Hide Show-->
+                            </template>
+                        </template>
+                    </div>
+                </div>
+            </lightning-card>
+
+            <!--Model For Dupliacate Maching Rule Start Here-->
+            <template if:true={showDMRModel}>
+                <div class="demo-only demo-only_viewport" style="height:800px;">
+                    <section role="dialog" tabindex="-1" class="slds-modal slds-fade-in-open slds-modal_medium" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1">
+                        <div class="slds-modal__container">
+                            <header class="slds-modal__header">
+                                <div class="slds-grid slds-wrap">
+                                    <div class="slds-col slds-size_4-of-12 slds-float_left">
+                                        <span> 
+                                            <div class="slds-page-header__col-title">
+                                                <div class="slds-media">
+                                                    <div class="slds-media__figure">
+                                                        <span class="slds-icon_container slds-icon-standard-opportunity" title="opportunity">
+                                                            <lightning-icon icon-name="action:edit_groups" size="small" alternative-text="action edit_groups" ></lightning-icon>
+                                                        </span>
+                                                    </div>
+                                                    <div class="slds-media__body">
+                                                        <div class="slds-page-header__name">
+                                                            <div class="slds-page-header__name-title">
+                                                                <h1><span class="slds-page-header__title">{dmrObjName}</span></h1>
+                                                            </div>
+                                                        </div>
+                                                        <p class="slds-page-header__title slds-truncate">Duplicate Matching Rule</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                    <div class="slds-col slds-size_7-of-12"></div>
+                                    <div class="slds-col slds-size_1-of-12">
+                                        <lightning-icon class="slds-float_right slds-p-left_small" icon-name="utility:clear" size="small" alternative-text="utility close" onclick={hideDMRModel}></lightning-icon>
+                                    </div>
+                                </div>
+                            </header>
+                            
+                            <div class="slds-modal__content slds-p-around_small" id="modal-content-id-1">
+
+                                <div class="slds-grid slds-wrap slds-theme_shade slds-box slds-p-horizontal_medium">
+                                        <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                            <span><b>{dmrObjName} FIELDS</b></span>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12">
+                                                <span><b>LOOKUP OBJECT FIELD</b></span>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                <span><b>OPERATOR TYPE</b></span>
+                                        </div>
+                                        <div class="slds-col slds-size_2-of-12 slds-text-align_center">
+                                                <span><b>FILTER TYPE</b></span>
+                                        </div>
+                                        <div class="slds-col slds-size_3-of-12 slds-text-align_center">
+                                                <span><b>FILTER FIELD/VALUE</b></span>
+                                        </div>
+                                </div>
+                                <template if:true={duplicateMatchRuleDataList}>
+                                     <template for:each={duplicateMatchRuleDataList} for:item="obj">
+                                         <template for:each={obj.dataList} for:item="dmrObj">
+                                            <div key={dmrObj.Id} class="slds-grid slds-wrap slds-box slds-p-horizontal_medium">
+                                               <div class="slds-col slds-size_3-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                   <div class="slds-grid slds-wrap">
+                                                        <div class="slds-col slds-size_2-of-12 slds-text-align_center slds-p-horizontal_xx-small slds-p-top_xx-small">
+                                                                <span><b>{dmrObj.srNo}</b></span>
+                                                        </div>
+                                                        <div class="slds-col slds-size_10-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                            <span>
+                                                                <lightning-combobox
+                                                                    class="slds-float_left"
+                                                                    data-index={dmrObj.index}
+                                                                    value={dmrObj.selectedVal}
+                                                                    options={dmrObj.objFieldList}
+                                                                    onchange={handleObjFieldChange}>
+                                                                </lightning-combobox>
+                                                            </span>
+                                                        </div>
+                                                   </div>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12">
+                                                        <span></span>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                        <span>
+                                                            <lightning-combobox
+                                                                data-index={dmrObj.index}
+                                                                value={dmrObj.operatorSelVal}
+                                                                options={dmrObj.operatorList}
+                                                                onchange={handleOperatorChange}>
+                                                            </lightning-combobox>
+                                                        </span>
+                                                </div>
+                                                <div class="slds-col slds-size_2-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                        <span>
+                                                            <lightning-combobox
+                                                                data-index={dmrObj.index}
+                                                                value={dmrObj.filterSelVal}
+                                                                options={dmrObj.filterList}
+                                                                onchange={handleFilterChange}>
+                                                            </lightning-combobox>
+                                                        </span>
+                                                </div>
+                                                <div class="slds-col slds-size_3-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                    <div class="slds-grid slds-wrap">
+                                                        <div class="slds-col slds-size_10-of-12 slds-text-align_center slds-p-horizontal_xx-small">
+                                                            <template if:true={dmrObj.isStaticFilter}>
+                                                                <lightning-input type="text" value={dmrObj.staticInputVal}></lightning-input>
+                                                            </template>
+                                                            <template if:false={dmrObj.isStaticFilter}>
+                                                                <lightning-combobox
+                                                                    data-index={dmrObj.index}
+                                                                    value={dmrObj.btSelectedVal}
+                                                                    options={dmrObj.btFieldsOptionList}
+                                                                    onchange={handleBTFieldChange}>
+                                                                </lightning-combobox>
+                                                            </template>
+                                                        </div>
+                                                        <div class="slds-col slds-size_2-of-12 slds-text-align_center slds-p-horizontal_xx-small slds-p-top_xx-small">
+                                                                <lightning-icon class="slds-float_left slds-p-left_small" icon-name="utility:delete" size="small" data-objname={dmrObjName} data-index={dmrObj.index}  alternative-text="utility delete" onclick={handleDeleteInDMR}></lightning-icon>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                         </template>
+                                     </template>
+                                </template>
+                            </div>
+                            <footer class="slds-modal__footer">
+                                <button class="slds-button slds-button_neutral" onclick={handleDMRCancel}>Cancel</button>
+                                <button class="slds-button slds-button_brand" onclick={handleDMRSave}>Save</button>
+                            </footer>
+                        </div>
+                    </section>
+                    <div class="slds-backdrop slds-backdrop_open"></div>
+                </div>
+            </template>
+            <!--Model For Dupliacate Maching Rule End Here-->
+       </div>
+</template>

@@ -1,0 +1,17 @@
+.slds-form-element__label:empty{
+    display: none;
+}
+li{
+    list-style: none;
+    line-height: 30px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+}
+h2{
+    padding: 5px 5px 5px 10px;
+    background-color: cornflowerblue;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow:hidden;
+}
