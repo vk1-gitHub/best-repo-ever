@@ -1,0 +1,10 @@
+{
+    "orgId": "00D61000000Zws6EAC",
+    "accessToken": "8a7cfd87b8c147f5725064a707a0822d4c2aaceee4a18a866e2fb35ab348a2e4ea43dcb340678bd84cd8d09e5c3c901b4ad431edb85ee4b18c6e256baf0c00f6a9189cff9e94d347de2aad8160d80cf3419af10efa0fc89f4d2f7d9014e4aca0488500db303c4907badc33c0313aa58969ad86e60278:c2cc4b0caeb058a4e3f7e1fb3fe95977",
+    "refreshToken": "bdcf57745c2a1d1f5b04f58e1ded5f659d71343ef3c0fc4d64b8d784adbe1f732ae0b40b085e0efc7e48ca3dbd03578e102c5799676cf9489d72f501fe2ed9c81583d760295bb881cf4192b03f5d512feaa1508a69fda266349dc7e6ec:dda723e51308f3b792d576e0548cb010",
+    "instanceUrl": "https://erximport3-dev-ed.my.salesforce.com",
+    "loginUrl": "https://login.salesforce.com",
+    "username": "devimport3@cloudcertitude.com",
+    "clientId": "PlatformCLI",
+    "isDevHub": true
+}

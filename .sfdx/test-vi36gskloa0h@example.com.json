@@ -1,0 +1,11 @@
+{
+    "orgId": "00D0l000000131aEAA",
+    "accessToken": "bd75e47dab3676437ef8b66f2cf5b95f0884cabddf935ff9b466dedbdc78def7f26234ab9db39ac0b1f79748de0379a9af0d962d9f433db85075435b049fbfd95532f91c0460620f682e7ccc76459cefea2501b8308a9d420dd4dc95a1d99d0a8ab10b61f219b29245ed308b342d7d4a233819e87329:0eec8e68a612b38a1d32f8404671156b",
+    "refreshToken": "db7e5529dfb4d7de1a40c1feb75abccc63b0740036c768869e2c99107d74970aaa7a6524bc4c58a341b55fe6d766e76dca9350f624c35c32d72332ca0dc304198a60790a5ed4633415693c876c3fdc0207d1ad3867abf8565af97e5d31:1fca0f884d4c0e7cba76fcfbb1be9953",
+    "instanceUrl": "https://dream-platform-2422-dev-ed.cs58.my.salesforce.com/",
+    "loginUrl": "https://CS58.salesforce.com",
+    "username": "test-vi36gskloa0h@example.com",
+    "createdOrgInstance": "CS58",
+    "created": 1548159238770,
+    "devHubUsername": "vk@cloudcertitude.com"
+}

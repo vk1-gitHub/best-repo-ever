@@ -1,0 +1,11 @@
+{
+    "orgId": "00D0l00000013JZEAY",
+    "accessToken": "b21571165d604cb2bbdcf9dc3d03b19aafa9e458ae2062e5d1dcfda0773f090793b20cd502eb59ec308c6911ad909523d1ed817279c92cbb54b910a3bad64ad2815198255942d5e6eee2496df9c2070c1871f6e7da8d3ee0851287c676148ec906accccc0bb0460d0d80391b8431c5c6604c434647e6:babf721d42fdf6d189743296ac63b29f",
+    "refreshToken": "6c66b670af98307727971c196f10a0a5e1627b0fd56b30b9f8d60ce38e7bd0629e017f1731a543cd4a824f5a00965c73fecf6f8ba8adef8bdcbc8b5838b9c78f413c39640e9cedd4b936568dd8f5fabd4ed7f5fdc99ea6929bdcb34691:cf86344e3dda3f2f5c5c5c83c401993d",
+    "instanceUrl": "https://connect-java-1237-dev-ed.cs58.my.salesforce.com/",
+    "loginUrl": "https://CS58.salesforce.com",
+    "username": "test-kufzafqqhdcj@example.com",
+    "createdOrgInstance": "CS58",
+    "created": 1548222684133,
+    "devHubUsername": "vk@cloudcertitude.com"
+}

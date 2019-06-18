@@ -1,0 +1,11 @@
+{
+    "orgId": "00Dp00000009TSGEA2",
+    "accessToken": "2b2b4b55b3632d734af98fca955cec78131cbc6ec50f185887a322122ba7824d874b12736fee2580cedad907fe8bdb57023266660a4aba7e45f9626acfbe3c9b0addc08a7ee2f0a181987ba2e37613cf83af394fb2c5a7407f2686eb1f923da0c4d116b58dfdb376440e79d3c8de12ba4d2bcbdf235e:6a33ebd6c65797703759b9a519f18337",
+    "refreshToken": "b776dad078b9ae6f6f68a3ac076983efa17ca7af1a602f5e6f3ebbc91dde4995173329ae9dc14d20de22d48015857528cc8597a60f049367cde2284c9496214850c10949bb60d621f2fdb4bf506f853eb24a5354f6dbeca56a1c3cfaf4:eabdf35e61601b089525c6d8c441dd51",
+    "instanceUrl": "https://site-app-7748-dev-ed.cs31.my.salesforce.com/",
+    "loginUrl": "https://CS31.salesforce.com",
+    "username": "test-xeuwyo6w5onl@example.com",
+    "createdOrgInstance": "CS31",
+    "created": 1550234426109,
+    "devHubUsername": "vk@sales-force.com"
+}

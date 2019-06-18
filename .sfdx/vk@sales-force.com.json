@@ -1,0 +1,9 @@
+{
+    "orgId": "00DB0000000K4tHMAS",
+    "accessToken": "799b32d886fe9fe3fd0971e61f652ec36f1a3ca47217123841e6543d7e484650e9e38f406c55e105a06c72d418f9b00c0063f97eea18d9d3731adcbc5816e0b22fe82724ffa9ce624e4b844d11fcc43f0c1cb6715e3e8a4a3a75d4a6a4b1140d1ad64805ed1037d43e7af70f7f569d0a72005dc988af:eb24e2c2d1be64ab00aa5054ed6d1013",
+    "refreshToken": "6ba5530b54ca40957a341d7e22c5c88c580fe3b3676e150055f7fdbd633b03b46d508066df8dd7dda2f4d49731caead07f256abd8d359a2907fd5c3159fff0d51befa0d5ee0bc6699cec814da8256f5cef3c32692c2d3e516ae6785fc7:f2b8071ae6d8a79314934d3b3aeda37d",
+    "instanceUrl": "https://vk-lightning-dev-ed.my.salesforce.com",
+    "loginUrl": "https://login.salesforce.com/",
+    "username": "vk@sales-force.com",
+    "clientId": "PlatformCLI"
+}

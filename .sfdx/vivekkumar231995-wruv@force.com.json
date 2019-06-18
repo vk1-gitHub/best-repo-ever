@@ -1,0 +1,10 @@
+{
+    "orgId": "00DB0000000K4tHMAS",
+    "accessToken": "740613f607606333ae3c5139373b26ea47c4f5989aafab1bbe326635eab47a3c9a7cce4b3b7a62baa4450aa73e9a1edea49e68290a284ef871ed992fc76004d27a560d4308e633fda543fff1e0207e7091675cf26e4f254f96589e2196838861859d255c074b471125489cba9ff66a5c59a17b8b68ad:7826fdf11bed8fe2cee4c42a93194abf",
+    "refreshToken": "4fd09f19ccc6b0ed97f8b8f94f94014d5d21f963de1f76772a46ccbab13d10c6494d650514a55471a7c4cb0ac8315c36a24ada6216e491bcfe742b9d7713ce6afe47a8f0cc3110387cc1f10598b68163a970a5db8a547e6f28de532d6f:b91d0fadd1bc3633c3f7f498f190fffd",
+    "instanceUrl": "https://vk-lightning-dev-ed.my.salesforce.com",
+    "loginUrl": "https://login.salesforce.com",
+    "username": "vivekkumar231995-wruv@force.com",
+    "clientId": "SalesforceDevelopmentExperience",
+    "clientSecret": "971dc9b6e4bb38e478b36055ff61ba367730da1435a0b462d5:f2c9e44d01bf2dcb1ff71b046fa9bc0b"
+}

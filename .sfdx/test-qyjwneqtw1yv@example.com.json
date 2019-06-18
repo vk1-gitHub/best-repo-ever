@@ -1,0 +1,11 @@
+{
+    "orgId": "00D0k0000008vPaEAI",
+    "accessToken": "4a90e711479cfb73327a353e9a8b38819e9a23df78f442cd878173d484dd9fd828e0df60af6ec89600992b3ee4a2125805d8c787c42e9ad1387db113223f5ebb45b0e5e587d0ce480c5e3065a57e3c9a28e921e8f3f363efe7736a280e2a1a70f1acbea881a24067cfd4e4975ae0076bf885c1386284:b5e90f3b2fda509c0e7affbfc9e2619b",
+    "refreshToken": "e4309bb1741697191dc224df4eb00e969a1caccbd3a39dfe4c4c49f143f014523e69d5f3e373b34cda7c6810782ba252707c0e9380ebff6d57b90b9aac62c244f3058f4eecd88c76ab7f14eb74571ae2118c4dbed01fdfaf26df9821e1:6b3f20f4b9d1d7b577fb0fe89b44b0e2",
+    "instanceUrl": "https://momentum-drive-4871-dev-ed.cs57.my.salesforce.com/",
+    "loginUrl": "https://CS57.salesforce.com",
+    "username": "test-qyjwneqtw1yv@example.com",
+    "createdOrgInstance": "CS57",
+    "created": 1550221005058,
+    "devHubUsername": "vk@sales-force.com"
+}

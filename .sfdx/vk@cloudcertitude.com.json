@@ -1,0 +1,11 @@
+{
+    "orgId": "00D6F000002WtHSUA0",
+    "accessToken": "e2e08db0aa641e0c3da9d313a0492f07908ec363adcd16e15edf7ea5b6baafe486032520e64f0e1b731b18867d8455c5d89f135f1e04136261d5a18b88ad142ebe4b9d14d0999cbabd9d4ee3ba856cfdec583ffd8cd2c0906ff63b20b7a13f8e1afb615505157d8d0e2accea3d56eef22df397818ed4:683078724a49359ebb0be9eaf0f1563c",
+    "refreshToken": "7670326a51fe24f8537ff7fa6000dba46462359b6a4f3de08310d3caaffdc3b4710fd8a9de0a5de198116ccf39a3aad19bb9439c5ae951602c1af78a8f07dab828b60816f09f21e865e10bde01be379bfe9eb4c28c8f88b533ba578f90:3b5697b73cf4fa78b200fbbc75dfbccb",
+    "instanceUrl": "https://my-dev-org123456-dev-ed.my.salesforce.com",
+    "loginUrl": "https://login.salesforce.com",
+    "username": "vk@cloudcertitude.com",
+    "clientId": "SalesforceDevelopmentExperience",
+    "clientSecret": "6496c3455a393b579be9ef4419c86ce1fcd91d85a69675e186:3687837e0197ba4a25977af785e4d8a3",
+    "isDevHub": true
+}
